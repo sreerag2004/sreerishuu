@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Happy Birthday, Richu! 🎂💖</title>
+  <style>
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#ffe6f2,#fffafc);
+      margin:0;padding:0;color:#4b2e2e;overflow-x:hidden;
+    }
+    h1,h2{text-align:center;color:#ff5e99}
+    .container{max-width:900px;margin:20px auto;padding:20px;background:#fff7fb;border-radius:20px;box-shadow:0 8px 25px rgba(255,105,150,0.15)}
+    .hearts{position:fixed;inset:0;z-index:0;pointer-events:none;}
+    .heart{position:absolute;width:20px;height:20px;background:#ff6fa3;transform:rotate(45deg);border-radius:4px;opacity:0.8}
+    .heart:before,.heart:after{content:'';position:absolute;width:20px;height:20px;background:#ff6fa3;border-radius:50%}
+    .heart:before{top:-10px;left:0}
+    .heart:after{left:10px;top:0}
+    .letter{font-size:18px;line-height:1.7;padding:20px;border-radius:14px;background:#fff0f6;margin-top:20px}
+    .wishes{background:#ffecf4;padding:15px;border-radius:14px;margin-top:20px}
+    .fun-section,.cake-section,.popup-section,.moments-section{background:#fff0f6;padding:15px;border-radius:14px;margin-top:20px}
+    footer{text-align:center;margin:25px 0;color:#a0627a}
+    button{background:#ff6fa3;color:white;padding:10px 20px;border:none;border-radius:12px;cursor:pointer;font-size:16px;box-shadow:0 4px 10px rgba(255,111,163,0.2)}
+    button:hover{background:#ff5295}
+    #cake{font-size:80px;text-align:center;cursor:pointer;transition:transform 0.3s}
+    #cake:hover{transform:scale(1.1)}
+    #candles{color:#ffb6c1;font-size:40px;transition:opacity 0.5s}
+    .popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff0f6;padding:30px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:10;text-align:center;width:80%;max-width:400px;font-size:18px;}
+    .popup button{margin-top:15px;background:#ff5e99;}
+    .overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9;}
+    .moments-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:15px;}
+    .moments-gallery img{width:100%;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:transform 0.3s;}
+    .moments-gallery img:hover{transform:scale(1.05)}
+    
+    /* Party Page Styles (hidden initially) */
+    #partyPage{
+      display:none;
+      background:linear-gradient(135deg,#ffdee9,#b5fffc);
+      color:#4b2e2e;
+      min-height:100vh;
+      padding-bottom:100px;
+      overflow:hidden;
+    }
+    .confetti{
+      position:fixed;width:10px;height:10px;background:#ff2e63;animation:fall 4s linear infinite;top:-10px;
+    }
+    @keyframes fall{
+      0%{transform:translateY(-10px) rotate(0deg);}
+      100%{transform:translateY(110vh) rotate(720deg);}
+    }
+    .message-box{
+      background:#fff0f6;
+      max-width:600px;
+      margin:40px auto;
+      padding:20px;
+      border-radius:20px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+      text-align:center;
+    }
+    textarea{
+      width:90%;
+      height:120px;
+      border-radius:10px;
+      padding:10px;
+      border:2px solid #ff6fa3;
+      font-size:16px;
+      font-family:'Poppins';
+      resize:none;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEARTS -->
+  <div class="hearts" id="hearts"></div>
+
+  <!-- MAIN BIRTHDAY PAGE -->
+  <div class="container" id="mainPage">
+    <h1>💗 Happy Birthday My Dearest Richu 💗</h1>
+    <p style="text-align:center;font-size:18px;">Today isn’t just your birthday—it’s a celebration of *you* and every smile, laugh, and moment you’ve brought into my life. 🎉</p>
+
+    <div class="letter">
+      <p>Dear Richu,</p>
+      <p>You are the melody to my chaos and the calm to my storm. Every moment with you feels like a page from a dream I never want to end. From the silly talks to our quiet little adventures, you’ve made every second brighter.</p>
+      <p>I can’t thank the universe enough for bringing you into my world. You’re more than just someone special—you’re my heart’s favorite story. 💫</p>
+      <p>Happy Birthday, my love. May your day be filled with endless laughter, warm hugs, delicious cake, and the love you give multiplied a thousand times over!</p>
+      <p>Forever yours,<br><strong>Sreerag 💞</strong></p>
+    </div>
+
+    <div class="wishes">
+      <h2>🌸 Birthday Wishes 🌸</h2>
+      <ul style="list-style:none;padding-left:0;">
+        <li>🎈 May your smile shine brighter than all the candles on your cake.</li>
+        <li>🌷 May each wish you make come true in the sweetest way.</li>
+        <li>💖 May your year be filled with magic, peace, and all the love in the world.</li>
+        <li>✨ And may we celebrate many more birthdays together!</li>
+      </ul>
+    </div>
+
+    <div class="cake-section">
+      <h2>🎂 Cake Cutting Time 🎂</h2>
+      <div id="cake">🎂<div id="candles">🕯️🕯️🕯️</div></div>
+      <p id="cakeMsg" style="text-align:center;font-size:18px;"></p>
+    </div>
+
+    <div class="fun-section">
+      <h2>🎉 Fun Birthday Extras 🎉</h2>
+      <p>💫 Click below for some surprises!</p>
+      <button onclick="playSong()">🎵 Play Your Song</button>
+      <button onclick="showTrivia()">💌 Birthday Trivia</button>
+      <div id="trivia" style="margin-top:15px;font-size:17px;color:#6b4b52;"></div>
+    </div>
+
+    <div class="popup-section">
+      <h2>💖 Special Message 💖</h2>
+      <p>Click the button below to open a heartfelt letter.</p>
+      <button onclick="showPopup()">💌 Open Letter</button>
+    </div>
+
+    <div class="moments-section">
+      <h2>📸 Our Moments 📸</h2>
+      <p style="text-align:center;">Some of our sweetest memories together 💕</p>
+      <div class="moments-gallery">
+        <img src="WhatsApp Image 2025-10-28 at 10.12.24_8aa2f07e.jpg" alt="Moment 1">
+        <img src="WhatsApp Image 2025-10-28 at 10.12.24_3552b396.jpg" alt="Moment 2">
+        <img src="WhatsApp Image 2025-10-28 at 10.12.25_8ae99859 copy 2.jpg" alt="Moment 3">
+        <img src="WhatsApp Image 2025-10-28 at 10.12.25_dd24f0cf.jpg" alt="Moment 4">
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+      <button onclick="goToPartyPage()">🎊 Continue the Celebration 🎊</button>
+    </div>
+
+    <footer>Made with endless love and sparkles by Sreerag ✨</footer>
+  </div>
+
+  <!-- POPUP -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <p>💌 You're my lifeline, Richu. Please don't ever leave me. 💖<br>You're the reason my world feels complete. 🌎💕</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <!-- PARTY PAGE -->
+  <div id="partyPage">
+    <h1 style="text-align:center;margin-top:40px;">🎊 Party Time, Richu! 🎊</h1>
+    <p style="text-align:center;">The music’s on, confetti’s flying, and this moment is *all yours!* 💃💞</p>
+
+    <div class="message-box">
+      <h2>💌 Your Words 💌</h2>
+      <p>Write something special here — it’ll be treasured forever 💖</p>
+      <textarea id="richuMessage" placeholder="Type your words here..."></textarea><br>
+      <button onclick="saveMessage()">💫 Save Message</button>
+      <p id="savedMsg" style="margin-top:10px;color:#4b2e2e;"></p>
+    </div>
+
+    <audio autoplay loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    </audio>
+  </div>
+
+  <script>
+    // HEARTS animation
+    const heartsContainer = document.getElementById('hearts');
+    function spawnHeart(){
+      const heart=document.createElement('div');
+      heart.className='heart';
+      heart.style.left=Math.random()*100+'%';
+      heart.style.top='100%';
+      const size=10+Math.random()*20;
+      heart.style.width=size+'px';
+      heart.style.height=size+'px';
+      heartsContainer.appendChild(heart);
+      const duration=5000+Math.random()*3000;
+      heart.animate([{transform:`translateY(0)`},{transform:`translateY(-110vh)`,opacity:0}],{duration,easing:'linear'});
+      setTimeout(()=>heart.remove(),duration);
+    }
+    setInterval(spawnHeart,400);
+
+    // Cake
+    document.getElementById('cake').addEventListener('click',()=>{
+      const candles=document.getElementById('candles');
+      candles.style.opacity='0';
+      document.getElementById('cakeMsg').innerText='🎉 Yay! You blew out the candles! Make a wish, Richu! 💕';
+    });
+
+    // Trivia + Song
+    const triviaFacts=['🎂 Fun Fact: You make aging look like a fine art! 😄','💖 Did you know? You’ve smiled over 2 million times since we met. 😉','🌈 Every star tonight twinkles just for you, birthday girl!','🍰 Calories don’t count today — it’s a universal rule!'];
+    function showTrivia(){
+      const random=triviaFacts[Math.floor(Math.random()*triviaFacts.length)];
+      document.getElementById('trivia').innerText=random;
+    }
+    function playSong(){
+      window.open('https://open.spotify.com/track/4zNh8UgXZA3LpeuD0e1u4z?si=t0ZyrkPdQ9WvG36NQDpeMQ','_blank');
+    }
+
+    // Popup
+    function showPopup(){
+      document.getElementById('overlay').style.display='block';
+      document.getElementById('popup').style.display='block';
+    }
+    function closePopup(){
+      document.getElementById('overlay').style.display='none';
+      document.getElementById('popup').style.display='none';
+    }
+
+    // Party Page Logic
+    function goToPartyPage(){
+      document.getElementById('mainPage').style.display='none';
+      document.getElementById('partyPage').style.display='block';
+      startParty();
+    }
+
+    function startParty(){
+      setInterval(()=>{
+        const confetti=document.createElement('div');
+        confetti.className='confetti';
+        confetti.style.left=Math.random()*100+'vw';
+        confetti.style.background=`hsl(${Math.random()*360},100%,70%)`;
+        confetti.style.animationDuration=(3+Math.random()*3)+'s';
+        document.body.appendChild(confetti);
+        setTimeout(()=>confetti.remove(),6000);
+      },150);
+    }
+
+    function saveMessage(){
+      const msg=document.getElementById('richuMessage').value.trim();
+      const display=document.getElementById('savedMsg');
+      if(msg){
+        display.innerText='💖 Message saved! Thank you, Richu 💕';
+      } else {
+        display.innerText='Please write something, my love 💞';
+      }
+    }
+  </script>
+</body>
+</html>
